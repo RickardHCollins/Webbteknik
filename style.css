@@ -191,3 +191,39 @@ th {
 tr:nth-child(even) {
     background-color: #f9f9f9;
 }
+
+@media screen and (max-width: 768px) {
+    /* Gör pizzagalleriet till en kolumn på små skärmar istället för tre */
+    .gallery {
+        grid-template-columns: 1fr; 
+    }
+    
+    /* Lägg meny-kolumnerna under varandra istället för bredvid varandra */
+    .menu-group {
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu-column {
+        width: 90%;
+    }
+    
+    /* Stapla navigationslänkarna */
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media print {
+    body {
+        background-color: white;
+        color: black;
+    }
+    /* Dölj navigation och footer vid utskrift då de inte behövs på papper */
+    header, footer {
+        display: none;
+    }
+    .hero {
+        margin: 0;
+    }
+}
